@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">T3 Policy Guard logo</title>
+  <desc id="desc">A dark app icon with a turquoise policy-gate badge, clear T3 monogram, and orange verification mark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="96" y1="72" x2="896" y2="936" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071522"/>
+      <stop offset="0.58" stop-color="#0A2732"/>
+      <stop offset="1" stop-color="#123E47"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="248" y1="208" x2="788" y2="792" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#36F0CB"/>
+      <stop offset="1" stop-color="#12A9D1"/>
+    </linearGradient>
+    <linearGradient id="badgeEdge" x1="260" y1="196" x2="760" y2="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B8FFF1"/>
+      <stop offset="1" stop-color="#1AE7C4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="32" stdDeviation="34" flood-color="#000A10" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="184" fill="url(#bg)"/>
+  <path d="M150 742 846 230M114 568 452 168M560 928 910 494" fill="none" stroke="#31E8C3" stroke-opacity="0.08" stroke-width="34" stroke-linecap="round"/>
+  <path d="M190 278h170M170 354h116M724 742h122M682 816h182" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="18" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <path d="M512 155 782 268v246c0 156-101 286-270 364-169-78-270-208-270-364V268l270-113Z" fill="#071A25"/>
+    <path d="M512 201 736 294v207c0 126-74 229-224 301-150-72-224-175-224-301V294l224-93Z" fill="url(#badge)" stroke="url(#badgeEdge)" stroke-width="24" stroke-linejoin="round"/>
+    <rect x="330" y="338" width="364" height="274" rx="58" fill="#E9FFF7"/>
+    <path d="M330 419h364" fill="none" stroke="#071A25" stroke-opacity="0.15" stroke-width="22"/>
+    <text x="512" y="565" text-anchor="middle" font-family="Arial Black, Helvetica, Arial, sans-serif" font-size="190" font-weight="900" fill="#082334">T3</text>
+  </g>
+
+  <path d="M694 683 753 742 850 628" fill="none" stroke="#FFB24A" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="230" cy="246" r="18" fill="#2AF0C8"/>
+  <circle cx="796" cy="778" r="14" fill="#2AF0C8" opacity="0.85"/>
+  <circle cx="742" cy="282" r="16" fill="#FFB24A" opacity="0.58"/>
+</svg>
