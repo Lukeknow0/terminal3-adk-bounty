@@ -1,0 +1,95 @@
+
+> terminal3-adk-bounty@0.1.0 demo
+> node src/demo.mjs
+
+Terminal 3 ADK minimal demo: privacy-aware procurement agent
+tenantDid=did:t3n:17db68...b617
+agentDid=did:t3n:fa952d...50ca
+scriptName=z:17db683949a7d5d057f8ababdbcf7c7bf811b617:procurement-policy
+
+## vendor-search-no-pii
+{
+  "decision": "ALLOW",
+  "piiInContractMemory": false,
+  "outboundHost": "api.vendor.example",
+  "offers": [
+    {
+      "offerId": "offer_demo_001",
+      "vendor": "Vendor Sandbox",
+      "amountUsd": 199,
+      "category": "AI Tools"
+    }
+  ]
+}
+
+## purchase-request-pii-placeholders
+{
+  "decision": "ALLOW",
+  "piiInContractMemory": false,
+  "outboundHost": "api.vendor.example",
+  "contractSawBody": {
+    "item": "secure support copilot",
+    "amountUsd": 199,
+    "companyName": "{{profile.company.name}}",
+    "requesterEmail": "{{profile.verified_contacts.email.value}}"
+  },
+  "hostResolvedPlaceholders": [
+    "profile.company.name",
+    "profile.verified_contacts.email.value"
+  ],
+  "vendorReceipt": {
+    "id": "receipt_demo_001",
+    "status": "created",
+    "deliveredTo": "[redacted-by-host]"
+  }
+}
+
+## blocked-over-budget
+{
+  "decision": "DENY",
+  "reason": "spend_limit_exceeded:1200>250",
+  "piiInContractMemory": false
+}
+
+## blocked-egress-host
+{
+  "decision": "DENY",
+  "reason": "host/http.egress_denied:api.unapproved.example",
+  "piiInContractMemory": false
+}
+
+## audit log
+[
+  {
+    "at": "2026-06-17T13:19:03.858Z",
+    "scenario": "vendor-search-no-pii",
+    "functionName": "search-vendors",
+    "decision": "ALLOW",
+    "reason": "no_pii_vendor_search",
+    "inputHash": "78962090a398c07d"
+  },
+  {
+    "at": "2026-06-17T13:19:03.859Z",
+    "scenario": "purchase-request-pii-placeholders",
+    "functionName": "request-purchase",
+    "decision": "ALLOW",
+    "reason": "host_resolved_placeholders",
+    "inputHash": "eaff9488ca373f70"
+  },
+  {
+    "at": "2026-06-17T13:19:03.859Z",
+    "scenario": "blocked-over-budget",
+    "functionName": "request-purchase",
+    "decision": "DENY",
+    "reason": "spend_limit_exceeded:1200>250",
+    "inputHash": "40a9ae0c4851209e"
+  },
+  {
+    "at": "2026-06-17T13:19:03.859Z",
+    "scenario": "blocked-egress-host",
+    "functionName": "request-purchase",
+    "decision": "DENY",
+    "reason": "host/http.egress_denied:api.unapproved.example",
+    "inputHash": "e6b31105a3d07fb0"
+  }
+]

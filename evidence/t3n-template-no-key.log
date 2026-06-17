@@ -1,0 +1,6 @@
+
+> terminal3-adk-bounty@0.1.0 t3n:template
+> node src/t3n-live-template.mjs
+
+T3N_API_KEY is not set. Skipping live T3N handshake.
+Get a sandbox key from https://www.terminal3.io/claim-page

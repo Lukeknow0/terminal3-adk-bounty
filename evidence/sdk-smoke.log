@@ -1,0 +1,11 @@
+
+> terminal3-adk-bounty@0.1.0 sdk:smoke
+> node src/sdk-smoke.mjs
+
+Terminal 3 SDK smoke check
+node=v22.22.3
+sdk=@terminal3/t3n-sdk@3.7.0
+sdk.engines.node=>=16.0.0
+exports ok: T3nClient, TenantClient, setEnvironment, loadWasmComponent, eth_get_address, metamask_sign, createEthAuthInput, getNodeUrl, getScriptVersion
+testnet node url=https://cn-api.sg.testnet.t3n.terminal3.io
+No T3N_API_KEY was read and no live auth/network call was made.
