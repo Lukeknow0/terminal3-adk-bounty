@@ -40,7 +40,7 @@ The key is read from `process.env` only and is not written to disk.
 
 ## Links to include
 
-- Repository: TODO add public GitHub URL
+- Repository: https://github.com/Lukeknow0/terminal3-adk-bounty
 - Demo logs: `evidence/demo-run.log` and `evidence/sdk-smoke.log`
 - SDK/docs report: `reports/sdk-docs-report.md`
 
